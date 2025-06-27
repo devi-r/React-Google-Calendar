@@ -1,38 +1,104 @@
 .App {
-  text-align: center;
+  height: 100vh;
+  background: #f8f9fa;
+  padding: 20px;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Google Colors Border */
+.App::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    /* Top border - Google Blue */ linear-gradient(
+      to right,
+      #4285f4 0%,
+      #4285f4 25%,
+      #ea4335 25%,
+      #ea4335 50%,
+      #fbbc04 50%,
+      #fbbc04 75%,
+      #34a853 75%,
+      #34a853 100%
+    ),
+    /* Bottom border - Google Blue */
+      linear-gradient(
+        to right,
+        #4285f4 0%,
+        #4285f4 25%,
+        #ea4335 25%,
+        #ea4335 50%,
+        #fbbc04 50%,
+        #fbbc04 75%,
+        #34a853 75%,
+        #34a853 100%
+      ),
+    /* Left border - Google Blue */
+      linear-gradient(
+        to bottom,
+        #4285f4 0%,
+        #4285f4 25%,
+        #ea4335 25%,
+        #ea4335 50%,
+        #fbbc04 50%,
+        #fbbc04 75%,
+        #34a853 75%,
+        #34a853 100%
+      ),
+    /* Right border - Google Blue */
+      linear-gradient(
+        to bottom,
+        #4285f4 0%,
+        #4285f4 25%,
+        #ea4335 25%,
+        #ea4335 50%,
+        #fbbc04 50%,
+        #fbbc04 75%,
+        #34a853 75%,
+        #34a853 100%
+      );
+  background-size: 100% 20px, /* Top border */ 100% 20px,
+    /* Bottom border */ 20px 100%, /* Left border */ 20px 100%; /* Right border */
+  background-position: 0 0, /* Top border */ 0 100%,
+    /* Bottom border - fixed */ 0 0, /* Left border */ 100% 0; /* Right border - fixed */
+  background-repeat: no-repeat;
   pointer-events: none;
+  z-index: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  height: calc(100vh - 40px); /* Account for top and bottom padding */
+  overflow: auto; /* Allow scrolling when needed */
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    height: calc(100vh - 20px); /* Account for reduced padding on mobile */
   }
 }

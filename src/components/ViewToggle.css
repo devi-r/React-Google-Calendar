@@ -1,0 +1,34 @@
+.view-toggle {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.view-button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6368;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 60px;
+}
+
+.view-button:hover {
+  background: #e8eaed;
+  color: #202124;
+}
+
+.view-button.active {
+  background: #1a73e8;
+  color: white;
+}
+
+.view-button.active:hover {
+  background: #1557b0;
+}

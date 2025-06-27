@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Raect Google Calendar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A calendar application built with React that mimics the functionality and design of Google Calendar. Built without any external libraries - just pure React and vanilla JavaScript.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+**Live Preview:** https://react-google-calendar.onrender.com
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 📅 **Multiple Calendar Views**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Month View**: Traditional calendar grid with event previews
+- **Week View**: Detailed weekly timeline with overlapping event handling
+- **Day View**: Hour-by-hour daily schedule with precise event positioning
+- **View Toggle**: Seamlessly switch between different calendar perspectives
 
-### `npm test`
+### 🎯 **Advanced Event Management**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Add Events**: Click any time slot or date to create new events
+- **Edit Events**: Modify existing events with pre-populated forms
+- **Delete Events**: Remove events with confirmation
+- **Event Details**: Zoom into events to see full details and actions
+- **Time Conflicts**: Smart overlap detection with user choice to save anyway
 
-### `npm run build`
+### 🎨 **Rich Event Features**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Color Coding**: 8 different colors for event categorization
+- **All-Day Events**: Support for events without specific times
+- **Event Descriptions**: Detailed event information
+- **Duration Calculation**: Automatic event duration display
+- **Overlapping Events**: Intelligent side-by-side display with "+X more" indicators
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js (version 14 or higher)
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone <repository-url>
+cd react-google-calendar
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Install dependencies:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the development server:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

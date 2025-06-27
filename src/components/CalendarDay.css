@@ -1,0 +1,163 @@
+.calendar-day {
+  min-height: 100px;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  background-color: white;
+}
+
+.calendar-day:hover {
+  background-color: #f8f9fa;
+}
+
+.calendar-day.other-month {
+  background-color: #f8f9fa;
+  color: #999;
+}
+
+.calendar-day.today {
+  background-color: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.calendar-day.today .day-number {
+  background-color: #2196f3;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.day-number {
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.day-events {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.day-event {
+  padding: 4px 6px;
+  border-radius: 3px;
+  color: white;
+  font-size: 11px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.day-event:hover {
+  opacity: 0.8;
+}
+
+.event-title {
+  font-weight: 500;
+  margin-bottom: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-time {
+  font-size: 10px;
+  opacity: 0.9;
+  font-weight: normal;
+}
+
+.more-events {
+  font-size: 10px;
+  color: #666;
+  text-align: center;
+  padding: 2px;
+  font-style: italic;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .calendar-day {
+    min-height: 80px;
+    padding: 4px;
+  }
+
+  .day-number {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .calendar-day.today .day-number {
+    width: 20px;
+    height: 20px;
+    font-size: 11px;
+  }
+
+  .day-events {
+    gap: 1px;
+  }
+
+  .day-event {
+    padding: 2px 4px;
+    font-size: 9px;
+  }
+
+  .event-title {
+    font-size: 9px;
+    margin-bottom: 1px;
+  }
+
+  .event-time {
+    font-size: 8px;
+  }
+
+  .more-events {
+    font-size: 8px;
+    padding: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-day {
+    min-height: 70px;
+    padding: 2px;
+  }
+
+  .day-number {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+
+  .calendar-day.today .day-number {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+
+  .day-event {
+    padding: 1px 3px;
+    font-size: 8px;
+  }
+
+  .event-title {
+    font-size: 8px;
+    margin-bottom: 1px;
+  }
+
+  .event-time {
+    font-size: 7px;
+  }
+
+  .more-events {
+    font-size: 7px;
+  }
+}
