@@ -236,3 +236,27 @@ export const getOverlappingEvents = (events, newEvent) => {
     );
   });
 };
+
+// Validate that an event starts and ends on the same day
+export const validateSameDayEvent = (startTime, endTime) => {
+  if (!startTime || !endTime) {
+    return { isValid: true, message: "" };
+  }
+
+  const startTimeObj = parseTime(startTime);
+  const endTimeObj = parseTime(endTime);
+
+  const startMinutes = startTimeObj.hours * 60 + startTimeObj.minutes;
+  const endMinutes = endTimeObj.hours * 60 + endTimeObj.minutes;
+
+  // Check if end time is before or equal to start time (indicating overflow to next day)
+  if (endMinutes <= startMinutes) {
+    return {
+      isValid: false,
+      message:
+        "Event must start and end on the same day. End time must be after start time.",
+    };
+  }
+
+  return { isValid: true, message: "" };
+};

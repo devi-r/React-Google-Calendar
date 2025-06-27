@@ -203,8 +203,14 @@ const getRandomInt = (min, max) =>
 const addMinutesToTime = (timeStr, minutes) => {
   const [hours, mins] = timeStr.split(":").map(Number);
   const totalMinutes = hours * 60 + mins + minutes;
-  const newHours = Math.floor(totalMinutes / 60) % 24;
+  const newHours = Math.floor(totalMinutes / 60);
   const newMins = totalMinutes % 60;
+
+  // Prevent overflow to next day by capping at 23:59
+  if (newHours >= 24) {
+    return "23:59";
+  }
+
   return `${newHours.toString().padStart(2, "0")}:${newMins
     .toString()
     .padStart(2, "0")}`;
@@ -246,8 +252,19 @@ const generateEvent = (id, date, options = {}) => {
   }
 
   const startTime = options.startTime || getRandomTimeSlot();
-  const duration = options.duration || getRandomItem(DURATIONS);
-  const endTime = addMinutesToTime(startTime, duration);
+  let duration = options.duration || getRandomItem(DURATIONS);
+
+  // Calculate end time and ensure it doesn't overflow to next day
+  let endTime = addMinutesToTime(startTime, duration);
+
+  // If end time is 23:59, it means we hit the cap, so adjust duration
+  if (endTime === "23:59") {
+    const [startHours, startMins] = startTime.split(":").map(Number);
+    const startMinutes = startHours * 60 + startMins;
+    const maxEndMinutes = 23 * 60 + 59; // 23:59 in minutes
+    duration = maxEndMinutes - startMinutes;
+    endTime = addMinutesToTime(startTime, duration);
+  }
 
   return {
     id,

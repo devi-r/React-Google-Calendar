@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./EventForm.css";
-import { formatDate, getOverlappingEvents } from "../utils/dateUtils";
+import {
+  formatDate,
+  getOverlappingEvents,
+  validateSameDayEvent,
+} from "../utils/dateUtils";
 
 const EventForm = ({
   selectedDate,
@@ -18,6 +22,7 @@ const EventForm = ({
     color: prePopulatedData?.color || "#4285f4",
   });
   const [overlappingEvents, setOverlappingEvents] = useState([]);
+  const [validationError, setValidationError] = useState("");
 
   // Update form data when prePopulatedData changes
   useEffect(() => {
@@ -32,6 +37,15 @@ const EventForm = ({
     }
   }, [prePopulatedData]);
 
+  // Validate form data whenever start or end time changes
+  useEffect(() => {
+    const validation = validateSameDayEvent(
+      formData.startTime,
+      formData.endTime
+    );
+    setValidationError(validation.message);
+  }, [formData.startTime, formData.endTime]);
+
   const colorOptions = [
     { value: "#4285f4", label: "Blue" },
     { value: "#ea4335", label: "Red" },
@@ -45,6 +59,12 @@ const EventForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check for validation errors first
+    if (validationError) {
+      return;
+    }
+
     if (formData.title.trim()) {
       // Check for overlapping events (exclude the current event if editing)
       const newEvent = {
@@ -80,9 +100,10 @@ const EventForm = ({
       [name]: value,
     }));
 
-    // Clear overlapping events when user changes time
+    // Clear overlapping events and validation errors when user changes time
     if (name === "startTime" || name === "endTime") {
       setOverlappingEvents([]);
+      setValidationError("");
     }
   };
 
@@ -154,6 +175,12 @@ const EventForm = ({
             </div>
           </div>
 
+          {validationError && (
+            <div className="validation-error">
+              <p>⚠️ {validationError}</p>
+            </div>
+          )}
+
           <div className="form-group">
             <label>Color</label>
             <div className="color-options">
@@ -218,7 +245,11 @@ const EventForm = ({
               >
                 Cancel
               </button>
-              <button type="submit" className="save-button">
+              <button
+                type="submit"
+                className="save-button"
+                disabled={!!validationError}
+              >
                 {isEditing ? "Update Event" : "Save Event"}
               </button>
             </div>

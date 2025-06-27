@@ -187,7 +187,8 @@
 }
 
 .overlap-warning li {
-  margin-bottom: 5px;
+  margin-bottom: 4px;
+  color: #666;
 }
 
 .overlap-actions {
@@ -238,6 +239,21 @@
 .save-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.validation-error {
+  background-color: #ffebee;
+  border: 1px solid #f44336;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.validation-error p {
+  margin: 0;
+  color: #d32f2f;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* Mobile Responsive Styles */
@@ -311,6 +327,15 @@
 
   .overlap-warning p,
   .overlap-warning li {
+    font-size: 13px;
+  }
+
+  .validation-error {
+    padding: 10px;
+    margin-bottom: 12px;
+  }
+
+  .validation-error p {
     font-size: 13px;
   }
 
@@ -397,6 +422,15 @@
 
   .overlap-warning p,
   .overlap-warning li {
+    font-size: 12px;
+  }
+
+  .validation-error {
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  .validation-error p {
     font-size: 12px;
   }
 
