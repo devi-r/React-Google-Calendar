@@ -8,14 +8,14 @@ A calendar application built with React that mimics the functionality and design
 
 ## Features
 
-### 📅 **Multiple Calendar Views**
+### **Multiple Calendar Views**
 
 - **Month View**: Traditional calendar grid with event previews
 - **Week View**: Detailed weekly timeline with overlapping event handling
 - **Day View**: Hour-by-hour daily schedule with precise event positioning
 - **View Toggle**: Seamlessly switch between different calendar perspectives
 
-### 🎯 **Advanced Event Management**
+### **Advanced Event Management**
 
 - **Add Events**: Click any time slot or date to create new events
 - **Edit Events**: Modify existing events with pre-populated forms
@@ -23,7 +23,7 @@ A calendar application built with React that mimics the functionality and design
 - **Event Details**: Zoom into events to see full details and actions
 - **Time Conflicts**: Smart overlap detection with user choice to save anyway
 
-### 🎨 **Rich Event Features**
+### **Rich Event Features**
 
 - **Color Coding**: 8 different colors for event categorization
 - **All-Day Events**: Support for events without specific times

@@ -1,4 +1,5 @@
 import React from "react";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { getMonthName, getYearName, getFullDayName } from "../utils/dateUtils";
 
 const CalendarHeader = ({ currentView, currentDate, onPrev, onNext }) => {
@@ -20,12 +21,12 @@ const CalendarHeader = ({ currentView, currentDate, onPrev, onNext }) => {
   return (
     <div className="calendar-header">
       <button onClick={onPrev} className="nav-button">
-        &lt;
+        <BsChevronLeft />
+      </button>
+      <button onClick={onNext} className="nav-button">
+        <BsChevronRight />
       </button>
       <h2 className="month-title">{getHeaderTitle()}</h2>
-      <button onClick={onNext} className="nav-button">
-        &gt;
-      </button>
     </div>
   );
 };
