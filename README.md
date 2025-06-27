@@ -43,8 +43,8 @@ A calendar application built with React that mimics the functionality and design
 1. Clone the repository:
 
 ```bash
-git clone <repository-url>
-cd react-google-calendar
+git clone https://github.com/devi-r/React-Google-Calendar.git
+cd React-Google-Calendar
 ```
 
 2. Install dependencies:
