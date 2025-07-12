@@ -1,4 +1,4 @@
-# Raect Google Calendar
+# React Google Calendar
 
 A calendar application built with React that mimics the functionality and design of Google Calendar. Built without any external libraries - just pure React and vanilla JavaScript.
 
